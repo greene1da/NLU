@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sys_nlu_utterance_entity">
+    <m2m_sys_nlu_utterance_entity action="INSERT_OR_UPDATE">
+        <annotation>[{"indexes":[3],"annotatedString":"I have a {{phrase=\"critical\"}} problem with my keyboard","cat":"1 - High"}]</annotation>
+        <entity display_value="urgency">3e8063eddb8cc010e120a0da4b9619d2</entity>
+        <sys_class_name>m2m_sys_nlu_utterance_entity</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-30 18:38:21</sys_created_on>
+        <sys_id>6be5a0d8db184450e120a0da4b961963</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>urgency.I have a critical problem with my keyboard</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>m2m_sys_nlu_utterance_entity_6be5a0d8db184450e120a0da4b961963</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-30 18:38:21</sys_updated_on>
+        <utterance display_value="I have a critical problem with my keyboard">70ded32ddb8cc010e120a0da4b961932</utterance>
+    </m2m_sys_nlu_utterance_entity>
+</record_update>

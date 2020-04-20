@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category display_value="">491d65d1dbc44010e120a0da4b96190d</category>
+        <connect_queue/>
+        <description/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.13.np4",
+  "goals": {
+    "09c6462cf51a4f3ca37b44c5b178873b": {
+      "id": "09c6462cf51a4f3ca37b44c5b178873b",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "419c85a57f494c8ebc668d2d2ca66d70": {
+          "id": "419c85a57f494c8ebc668d2d2ca66d70",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": "Looks like you have a hardware issue",
+            "mode": "simple"
+          }
+        },
+        "6ebd8d1eccf14bd4ac1845b24175eb5e": {
+          "id": "6ebd8d1eccf14bd4ac1845b24175eb5e",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "9e021505aa4140c28e5f5fa08432abc0": {
+          "id": "9e021505aa4140c28e5f5fa08432abc0",
+          "stepType": "Prompt",
+          "name": "broken item",
+          "prompt": {
+            "value": "What seems to be broken?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": true,
+          "skipIfFulfilled": true,
+          "entity": "brokenitem",
+          "variableId": "b5d5316293e4459c9d3164d27d0a6f85"
+        },
+        "32b77127c3b6444a88bba2a1f541e2fc": {
+          "stepType": "ChoicePrompt",
+          "name": "urgency",
+          "prompt": {
+            "value": "What's the urgency on this?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "57bb73a557854199b02cfeef3cfe4123",
+          "id": "32b77127c3b6444a88bba2a1f541e2fc",
+          "withNluUserInput": true,
+          "skipIfFulfilled": true,
+          "entity": "urgency"
+        },
+        "ed9b4aebb4f84a759b8b57cf668154fb": {
+          "id": "ed9b4aebb4f84a759b8b57cf668154fb",
+          "stepType": "CrudAction",
+          "name": "create hardware issue",
+          "template": "short_description=Employee is reporting an issue with their{{vaInputs.broken_item}}^urgency={{vaInputs.urgency}}^opened_by={{vaInputs.user.name}}^category=hardware",
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "dbd8ba2b545740c59f140f13d605d7ff"
+        },
+        "8390dbf66b124a3c82a8cd7a08e64ba3": {
+          "id": "8390dbf66b124a3c82a8cd7a08e64ba3",
+          "stepType": "RecordOutput",
+          "name": "show hardware issue",
+          "variableId": "dbd8ba2b545740c59f140f13d605d7ff",
+          "mode": "variable",
+          "tableName": "incident",
+          "fields": [
+            "short_description",
+            "urgency",
+            "opened_by",
+            "opened_at",
+            "category"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "40464b38dbf64bdda1c2d4489d7d1fcf",
+          "edgeType": "Edge",
+          "source": "419c85a57f494c8ebc668d2d2ca66d70",
+          "target": "9e021505aa4140c28e5f5fa08432abc0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f3fd92adb703434a9a97a95261a8e251",
+          "edgeType": "Edge",
+          "source": "9e021505aa4140c28e5f5fa08432abc0",
+          "target": "32b77127c3b6444a88bba2a1f541e2fc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f4a0dd9649954017a6d7e9347bd20453",
+          "edgeType": "Edge",
+          "source": "32b77127c3b6444a88bba2a1f541e2fc",
+          "target": "ed9b4aebb4f84a759b8b57cf668154fb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "adacbd27353249d799459a6006c10e6c",
+          "edgeType": "Edge",
+          "source": "ed9b4aebb4f84a759b8b57cf668154fb",
+          "target": "8390dbf66b124a3c82a8cd7a08e64ba3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "38917e0a394d443ab890ca2f06b83f2c",
+          "edgeType": "Edge",
+          "source": "8390dbf66b124a3c82a8cd7a08e64ba3",
+          "target": "6ebd8d1eccf14bd4ac1845b24175eb5e",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "b5d5316293e4459c9d3164d27d0a6f85": {
+      "id": "b5d5316293e4459c9d3164d27d0a6f85",
+      "name": "broken_item",
+      "label": "Broken Item",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "57bb73a557854199b02cfeef3cfe4123": {
+      "id": "57bb73a557854199b02cfeef3cfe4123",
+      "name": "urgency",
+      "label": "Urgency",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "1-High",
+          "value": "1"
+        },
+        {
+          "label": "2-Medium",
+          "value": "2"
+        },
+        {
+          "label": "3-Low",
+          "value": "3"
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "dbd8ba2b545740c59f140f13d605d7ff": {
+      "id": "dbd8ba2b545740c59f140f13d605d7ff",
+      "name": "create_hardware_issue",
+      "label": "Create Hardware Issue",
+      "varType": "reference",
+      "table": "incident",
+      "inactive": false,
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <live_agent>false</live_agent>
+        <name>Create a Hardware Issue</name>
+        <nlu_intent>CreateHardwareIssue</nlu_intent>
+        <nlu_model>global_55ea6d9ddb844010e120a0da4b96192f_Virtual_Agent_Workshop</nlu_model>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-22 18:39:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0599db61db8cc010e120a0da4b9619a4</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Create a Hardware Issue</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_cb_topic_0599db61db8cc010e120a0da4b9619a4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-10 14:14:15</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=0599db61db8cc010e120a0da4b9619a4"/>
+</record_update>

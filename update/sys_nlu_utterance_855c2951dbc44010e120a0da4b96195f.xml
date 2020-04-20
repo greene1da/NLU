@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_utterance">
+    <sys_nlu_utterance action="INSERT_OR_UPDATE">
+        <intent display_value="VAWSGreetings">495c2951dbc44010e120a0da4b96195a</intent>
+        <sys_class_name>sys_nlu_utterance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-21 16:04:10</sys_created_on>
+        <sys_id>855c2951dbc44010e120a0da4b96195f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>greetings</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_nlu_utterance_855c2951dbc44010e120a0da4b96195f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-21 16:04:10</sys_updated_on>
+        <utterance>greetings</utterance>
+    </sys_nlu_utterance>
+</record_update>

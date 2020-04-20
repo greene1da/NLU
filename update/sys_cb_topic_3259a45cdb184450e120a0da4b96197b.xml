@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category display_value="">491d65d1dbc44010e120a0da4b96190d</category>
+        <connect_queue/>
+        <description/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.13",
+  "goals": {
+    "8cf0cc0b91ab476891a021531a86e435": {
+      "id": "8cf0cc0b91ab476891a021531a86e435",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "a36d8cc372d74062b79e901827c4df80": {
+          "id": "a36d8cc372d74062b79e901827c4df80",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "bcbdd43a06424b4fa9bd869d46ba34ea": {
+          "id": "bcbdd43a06424b4fa9bd869d46ba34ea",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "55413d0eb0ea4ddcb542f6bf1448ab77": {
+          "id": "55413d0eb0ea4ddcb542f6bf1448ab77",
+          "stepType": "Prompt",
+          "name": "ticket number",
+          "prompt": {
+            "value": "Enter your ticket number",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "entity": "",
+          "variableId": "adf3e09a07284d3985a18499b98b1b24"
+        },
+        "2d3ee549efdc404aa818447331706f3c": {
+          "id": "2d3ee549efdc404aa818447331706f3c",
+          "stepType": "LookupRecord",
+          "name": "get ticket info",
+          "condition": {
+            "mode": "glide_query",
+            "value": "number={{vaInputs.ticket_number}}^activeISNOTEMPTY"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "a21e24102da740d79250a8c666faa524"
+        },
+        "00dcdb2e79c441e9a193e147e03868ca": {
+          "id": "00dcdb2e79c441e9a193e147e03868ca",
+          "stepType": "RecordOutput",
+          "name": "show ticket info",
+          "variableId": "a21e24102da740d79250a8c666faa524",
+          "mode": "variable",
+          "tableName": "incident",
+          "fields": [
+            "short_description",
+            "state",
+            "sys_updated_on"
+          ],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "702552351d454f26bb26c77c30bff71c",
+          "edgeType": "Edge",
+          "source": "a36d8cc372d74062b79e901827c4df80",
+          "target": "55413d0eb0ea4ddcb542f6bf1448ab77",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2555a261b6004bfeb454584b107e0d6c",
+          "edgeType": "Edge",
+          "source": "55413d0eb0ea4ddcb542f6bf1448ab77",
+          "target": "2d3ee549efdc404aa818447331706f3c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "020ee54da9d444838b3d64a76c71ceb6",
+          "edgeType": "Edge",
+          "source": "2d3ee549efdc404aa818447331706f3c",
+          "target": "00dcdb2e79c441e9a193e147e03868ca",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "43c409882f7545a7a97848b4286e3861",
+          "edgeType": "Edge",
+          "source": "00dcdb2e79c441e9a193e147e03868ca",
+          "target": "bcbdd43a06424b4fa9bd869d46ba34ea",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "adf3e09a07284d3985a18499b98b1b24": {
+      "id": "adf3e09a07284d3985a18499b98b1b24",
+      "name": "ticket_number",
+      "label": "Ticket Number",
+      "varType": "string",
+      "category": "vaInputs"
+    },
+    "a21e24102da740d79250a8c666faa524": {
+      "id": "a21e24102da740d79250a8c666faa524",
+      "name": "get_ticket_info",
+      "label": "Get Ticket Info",
+      "varType": "reference",
+      "table": "incident",
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <live_agent>false</live_agent>
+        <name>VA Workshop Lookup Incident</name>
+        <nlu_intent/>
+        <nlu_model/>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-30 18:53:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>3259a45cdb184450e120a0da4b96197b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>VA Workshop Lookup Incident</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_cb_topic_3259a45cdb184450e120a0da4b96197b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-30 18:58:34</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=3259a45cdb184450e120a0da4b96197b"/>
+</record_update>

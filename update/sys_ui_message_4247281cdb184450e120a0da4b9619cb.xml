@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <key>What's the urgency on this?</key>
+        <language>en</language>
+        <message>What's the urgency on this?</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-30 18:44:16</sys_created_on>
+        <sys_id>4247281cdb184450e120a0da4b9619cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>What's the urgency on this?</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_ui_message_4247281cdb184450e120a0da4b9619cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-30 18:44:16</sys_updated_on>
+    </sys_ui_message>
+</record_update>

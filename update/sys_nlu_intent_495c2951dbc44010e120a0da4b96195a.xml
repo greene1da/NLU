@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_nlu_intent">
+    <sys_nlu_intent action="INSERT_OR_UPDATE">
+        <description/>
+        <model display_value="Virtual Agent Workshop">2efbe151dbc44010e120a0da4b96199e</model>
+        <name>VAWSGreetings</name>
+        <sys_class_name>sys_nlu_intent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-21 16:04:10</sys_created_on>
+        <sys_id>495c2951dbc44010e120a0da4b96195a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>VAWSGreetings</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_nlu_intent_495c2951dbc44010e120a0da4b96195a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-21 16:06:13</sys_updated_on>
+    </sys_nlu_intent>
+</record_update>

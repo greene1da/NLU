@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category/>
+        <connect_queue/>
+        <description/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.13.np4",
+  "goals": {
+    "ff74308cf37743c08ca98b673d17f743": {
+      "id": "ff74308cf37743c08ca98b673d17f743",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "04224c9654104dc7828f0474dde9a162": {
+          "id": "04224c9654104dc7828f0474dde9a162",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "70560f709ca54a209cd4db28f5fcd594": {
+          "id": "70560f709ca54a209cd4db28f5fcd594",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "86bd27caff7c4fb2a4908b136e9aea77",
+          "edgeType": "Edge",
+          "source": "04224c9654104dc7828f0474dde9a162",
+          "target": "70560f709ca54a209cd4db28f5fcd594",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {}
+}</graph>
+        <key_phrases/>
+        <live_agent>false</live_agent>
+        <name>Test</name>
+        <nlu_intent/>
+        <nlu_model>global_55ea6d9ddb844010e120a0da4b96192f_Virtual_Agent_Workshop</nlu_model>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <roles/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-09 18:42:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>08285d821b045850647675d8cd4bcb38</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Test</sys_name>
+        <sys_package display_value="Virtual Agent Workshop" source="x_snc_va_lener">55ea6d9ddb844010e120a0da4b96192f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Virtual Agent Workshop">55ea6d9ddb844010e120a0da4b96192f</sys_scope>
+        <sys_update_name>sys_cb_topic_08285d821b045850647675d8cd4bcb38</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-09 18:42:30</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=08285d821b045850647675d8cd4bcb38"/>
+</record_update>
